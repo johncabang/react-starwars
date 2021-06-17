@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import { StarwarsContext } from "./hooks/StarwarsContext";
 
 function App() {
-  const [{ content }] = useContext(StarwarsContext);
+  const { content } = useContext(StarwarsContext);
 
   return (
     <Container>
@@ -19,14 +19,15 @@ function App() {
         whileTap={{ scale: 0.9 }}
         drag
         dragConstraints={{
-          top: -250,
-          left: -250,
-          right: 250,
-          bottom: 250,
+          top: -300,
+          left: -400,
+          right: 400,
+          bottom: 300,
         }}
+        style={{ backgroundColor: "transparent" }}
       >
-        <h1>star wars</h1>
-        <h5>react-query</h5>
+        <h1 style={{ backgroundColor: "transparent" }}>star wars</h1>
+        <h5 style={{ backgroundColor: "transparent" }}>react-query</h5>
       </motion.div>
       {content === "planets" ? <Planets /> : <People />}
     </Container>
