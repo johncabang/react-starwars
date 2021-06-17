@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { motion } from "framer-motion";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <motion.div
+        whileHover={{ scale: 1.8 }}
+        whileTap={{ scale: 0.9 }}
+        drag
+        dragConstraints={{
+          top: -50,
+          left: -50,
+          right: 50,
+          bottom: 50,
+        }}
+      >
+        <h1>star wars</h1>
+        <h5>react-query</h5>
+      </motion.div>
     </div>
   );
 }
