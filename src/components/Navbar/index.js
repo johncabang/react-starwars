@@ -9,8 +9,8 @@ const Navbar = () => {
   console.log(content);
   return (
     <Container>
-      <h3 style={{ margin: 0 }}>star wars</h3>
-      <div style={{ margin: 0 }}>
+      <StyledH4>star wars details</StyledH4>
+      <ButtonWrapper>
         <StyledButton
           onClick={() => {
             setContent("planets");
@@ -25,7 +25,7 @@ const Navbar = () => {
         >
           People
         </StyledButton>
-      </div>
+      </ButtonWrapper>
     </Container>
   );
 };
@@ -41,12 +41,21 @@ const Container = styled.div`
   padding: 0 5rem;
 `;
 
+const StyledH4 = styled.h4`
+  margin: 0;
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 0;
+`;
+
 const StyledButton = styled.button`
   border: 1px solid #ffe300;
   cursor: pointer;
   padding: 1rem 2rem;
   border-radius: 25px;
   text-transform: uppercase;
+  margin-left: 1rem;
 
   &:hover {
     transition: 1s ease;
