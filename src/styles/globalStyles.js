@@ -24,15 +24,12 @@ h1 {
 }
 
 h2 {
-
+  color: #ffe300;
+  font-size: 2.5rem;
 }
 
 h3 {
-
-}
-
-h4 {
-
+  font-size: 2rem;
 }
 
 h5 {

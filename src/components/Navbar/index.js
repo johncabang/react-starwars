@@ -8,26 +8,38 @@ const Navbar = () => {
 
   console.log(content);
   return (
-    <div>
-      <StyledButton
-        onClick={() => {
-          setContent("planets");
-        }}
-      >
-        Planets
-      </StyledButton>
-      <StyledButton
-        onClick={() => {
-          setContent("people");
-        }}
-      >
-        People
-      </StyledButton>
-    </div>
+    <Container>
+      <h3 style={{ margin: 0 }}>star wars</h3>
+      <div style={{ margin: 0 }}>
+        <StyledButton
+          onClick={() => {
+            setContent("planets");
+          }}
+        >
+          Planets
+        </StyledButton>
+        <StyledButton
+          onClick={() => {
+            setContent("people");
+          }}
+        >
+          People
+        </StyledButton>
+      </div>
+    </Container>
   );
 };
 
 export default Navbar;
+
+const Container = styled.div`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 5rem;
+`;
 
 const StyledButton = styled.button`
   border: 1px solid #ffe300;
