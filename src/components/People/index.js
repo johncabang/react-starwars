@@ -10,20 +10,20 @@ const fetchPeople = async () => {
 };
 
 const People = () => {
-  const { data, status } = useQuery("people", fetchPeople);
-  console.log(data);
+  const { data, status } = useQuery("People", fetchPeople);
+  // console.log(data);
 
   return (
     <Container>
       {status === "loading" && (
-        <StyledH1
+        <StyledH3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
           loading data
-        </StyledH1>
+        </StyledH3>
       )}
 
       {status === "error" && (
@@ -49,8 +49,8 @@ const People = () => {
 
       {status === "success" && (
         <div>
-          {data.results.map((people) => (
-            <div key={people.uid}>{people.name}</div>
+          {data.results.map((planet) => (
+            <div key={planet.uid}>{planet.name}</div>
           ))}
         </div>
       )}
@@ -69,7 +69,7 @@ const Container = styled(motion.div)`
   height: 80vh;
 `;
 
-const StyledH1 = styled(motion.h1)`
+const StyledH3 = styled(motion.h3)`
   background-color: transparent;
   margin: 0;
 `;

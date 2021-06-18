@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 import People from "./components/People";
 import Planets from "./components/Planets";
@@ -17,6 +18,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Navbar />
         {content === "planets" ? <Planets /> : <People />}
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   );

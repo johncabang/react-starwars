@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { StarwarsContext } from "../../hooks/StarwarsContext";
 
 const Navbar = () => {
-  const { content, setContent } = useContext(StarwarsContext);
+  const { setContent } = useContext(StarwarsContext);
 
-  console.log(content);
+  // console.log(content);
   return (
     <Container>
       <StyledH4>star wars details</StyledH4>
@@ -52,9 +52,10 @@ const ButtonWrapper = styled.div`
 const StyledButton = styled.button`
   border: 1px solid #ffe300;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 25px;
   text-transform: uppercase;
+  font-size: 0.8rem;
   margin-left: 1rem;
 
   &:hover {
