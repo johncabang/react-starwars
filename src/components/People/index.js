@@ -4,18 +4,30 @@ import styled from "styled-components";
 
 import { useQuery } from "react-query";
 
-const fetchPeople = async () => {
-  const res = await fetch("https://www.swapi.tech/api/people/");
-  return res.json();
-};
+import axios from "axios";
+
+// const fetchPeople = async () => {
+//   const res = await fetch("https://www.swapi.tech/api/people/");
+//   return res.json();
+// };
+
+// const fetchPeople = () => {
+//   axios.get("https://www.swapi.tech/api/people/");
+// };
 
 const People = () => {
-  const { data, status } = useQuery("People", fetchPeople);
-  // console.log(data);
+  const { isLoading, error, data } = useQuery("fetchPeople", async () => {
+    const { data } = await axios.get("https://www.swapi.tech/api/people/10");
+    return data.result.properties;
+  });
+
+  // console.log(isLoading);
+  // console.log(error);
+  console.log(data);
 
   return (
     <Container>
-      {status === "loading" && (
+      {isLoading ? (
         <StyledH3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -24,9 +36,15 @@ const People = () => {
         >
           loading data
         </StyledH3>
+      ) : (
+        <>
+          <h4>{data.name}</h4>
+          <p>Birth year: {data.birth_year}</p>
+          <p>Height: {data.height}</p>
+        </>
       )}
 
-      {status === "error" && (
+      {error && (
         <motion.h5
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -45,14 +63,6 @@ const People = () => {
         >
           error fetching data
         </motion.h5>
-      )}
-
-      {status === "success" && (
-        <div>
-          {data.results.map((planet) => (
-            <div key={planet.uid}>{planet.name}</div>
-          ))}
-        </div>
       )}
     </Container>
   );
