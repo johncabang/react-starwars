@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import { useQuery } from "react-query";
 
+// FETCH EXAMPLE
+
 const fetchPlanets = async () => {
   const res = await fetch("https://www.swapi.tech/api/planets/");
   return res.json();
@@ -16,14 +18,14 @@ const Planets = () => {
   return (
     <Container>
       {status === "loading" && (
-        <StyledH3
+        <motion.h3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
           loading data
-        </StyledH3>
+        </motion.h3>
       )}
 
       {status === "error" && (
@@ -36,11 +38,6 @@ const Planets = () => {
             left: -400,
             right: 400,
             bottom: 300,
-          }}
-          style={{
-            display: "block",
-            backgroundColor: "transparent",
-            margin: 0,
           }}
         >
           error fetching data
@@ -67,9 +64,4 @@ const Container = styled(motion.div)`
   justify-content: center;
   background-color: transparent;
   height: 80vh;
-`;
-
-const StyledH3 = styled(motion.h3)`
-  background-color: transparent;
-  margin: 0;
 `;

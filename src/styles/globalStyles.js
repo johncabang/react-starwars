@@ -30,10 +30,18 @@ h2 {
 
 h3 {
   font-size: 2rem;
+  background-color: transparent;
+
 }
 
 h4 {
   font-size: 1.5rem;
+  background-color: transparent;
+}
+
+h5 {
+  font-size: 1rem;
+  background-color: transparent;
 }
 
 `;

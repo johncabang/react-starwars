@@ -5,11 +5,10 @@ import { StarwarsContext } from "../../hooks/StarwarsContext";
 
 const Navbar = () => {
   const { setContent } = useContext(StarwarsContext);
-
   // console.log(content);
+
   return (
     <Container>
-      {/* <StyledH4>star wars details</StyledH4> */}
       <ButtonWrapper>
         <StyledButton
           onClick={() => {
@@ -40,10 +39,6 @@ const Container = styled.div`
   width: 100%;
   padding: 0 5rem;
 `;
-
-// const StyledH4 = styled.h4`
-//   margin: 0;
-// `;
 
 const ButtonWrapper = styled.div`
   margin: 0;
