@@ -34,8 +34,11 @@ const People = () => {
         </motion.h3>
       ) : (
         <>
-          <motion.h4
-            whileHover={{ scale: 4 }}
+          <StyledH4
+            whileHover={{
+              scale: 4,
+              transition: { duration: 1 },
+            }}
             whileTap={{ scale: 0.9 }}
             drag
             dragConstraints={{
@@ -46,7 +49,7 @@ const People = () => {
             }}
           >
             {data.name}
-          </motion.h4>
+          </StyledH4>
           <p>Birth year: {data.birth_year}</p>
           <p>Height: {data.height}</p>
         </>
@@ -80,4 +83,10 @@ const Container = styled(motion.div)`
   justify-content: center;
   background-color: transparent;
   height: 80vh;
+`;
+
+const StyledH4 = styled(motion.h4)`
+  &:hover {
+    color: #ffe300;
+  }
 `;
