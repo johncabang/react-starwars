@@ -9,7 +9,7 @@ const Navbar = () => {
   // console.log(content);
   return (
     <Container>
-      <StyledH4>star wars details</StyledH4>
+      {/* <StyledH4>star wars details</StyledH4> */}
       <ButtonWrapper>
         <StyledButton
           onClick={() => {
@@ -36,14 +36,14 @@ const Container = styled.div`
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   padding: 0 5rem;
 `;
 
-const StyledH4 = styled.h4`
-  margin: 0;
-`;
+// const StyledH4 = styled.h4`
+//   margin: 0;
+// `;
 
 const ButtonWrapper = styled.div`
   margin: 0;
